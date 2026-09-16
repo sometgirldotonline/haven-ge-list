@@ -1281,8 +1281,63 @@
   </head>
   <body>
     <div class="container-lg px-3 my-5 markdown-body">
+      <div id="haven-search">
+        <b><u>Search box</u></b><br>
+        <input type="search" id="search" placeholder="Type here to search">
+        <button type="button" onclick="searchAndHighlight(document.querySelector('#search').value)">Search</button>
+      </div>
+
       {{ content }}
     </div>
+
+    <script type="module">
+      import Fuse from "https://esm.sh/fuse.js@7.0.0";
+
+      const gelist = [];
+      const gerow = [];
+
+      document.querySelectorAll("tr td:first-child strong").forEach((e) => {
+        gelist.push(e.innerText);
+        gerow.push(e.closest("tr"));
+      });
+
+      const fuse = new Fuse(gelist, { threshold: 0.4 });
+
+      window.searchAndHighlight = function(query) {
+        if (!query) return;
+
+        const results = fuse.search(query);
+        if (results.length === 0) return;
+
+        const targetRow = gerow[results[0].refIndex];
+
+        targetRow.scrollIntoView({
+          behavior: "smooth",
+          block: "center"
+        });
+
+        targetRow.classList.add("flash");
+
+        setTimeout(() => {
+          targetRow.classList.remove("flash");
+        }, 1500);
+      };
+    </script>
+
+    <style>
+      #haven-search {
+        margin-bottom: 1em;
+      }
+
+      @keyframes flash-animation {
+        0% { background-color: #ffe066; }
+        100% { background-color: transparent; }
+      }
+
+      tr.flash {
+        animation: flash-animation 1.5s ease-out;
+      }
+    </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
     <script>anchors.add();</script>
   </body>
