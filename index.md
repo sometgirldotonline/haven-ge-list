@@ -14,7 +14,7 @@ If your game engine is not on this list, that does not directly mean it is not s
 </ul></details>
 
 <mark>To search this list: Press CTRL/CMD + F or find the "Search On Page" option in your browsers menu</mark>
-
+<input type=search id=search placeholder="Type here to search"> <button onclick="searchAndHighlight(document.querySelector('#search').value)">Search</button>
 <table>
   <thead>
     <tr>
@@ -406,3 +406,40 @@ If your game engine is not on this list, that does not directly mean it is not s
     </tr>
   </tbody>
 </table>
+<script type=module>
+import Fuse from "https://esm.sh/fuse.js@7.0.0"
+
+let gelist = []
+let gerow = []
+
+document.querySelectorAll("tr td:first-child strong").forEach((e) => {
+    gelist.push(e.innerText);
+    gerow.push(e.parentElement.parentElement)
+})
+
+// Initialize Fuse on the list of text strings
+const fuse = new Fuse(gelist, {
+    threshold: 0.4, // Adjust match strictness (0.0 = exact, 1.0 = match anything)
+    includeScore: true
+})
+
+function searchAndHighlight(query) {
+    if (!query) return;
+
+    const results = fuse.search(query);
+    if (results.length === 0) return;
+
+    // Get the index of the top match in the original gelist array
+    const targetIndex = results[0].refIndex;
+    const targetRow = gerow[targetIndex];
+
+    // Scroll the matching row into view smoothly
+    targetRow.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+    // Add the "flash" class and remove it after animation completes
+    targetRow.classList.add('flash');
+    setTimeout(() => {
+        targetRow.classList.remove('flash');
+    }, 1500);
+}
+</script>
