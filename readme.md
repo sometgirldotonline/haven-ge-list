@@ -3,7 +3,7 @@ This is a list of game engines, and whether or not they are "compatible" with ha
 
 To put it short, typically the main reason for a game engine not being supported is either due to it lacking support to export to a browser, or the fact that it does not store as files on a computer and lacks built-in support for Git Version Control.
 
-If your game engine is not on this list, that does not directly mean it is not supported. (If you know some Game Engines it's missing, make a PR or Issue to the site here: https://github.com/sometgirldotonline/haven-ge-list/)
+If your game engine is not on this list, that does not directly mean it is not supported. (If the site is missing any game engine, please submit an Issue or Pull Request to the sites repository on GitHub: [sometgirldotonline/haven-ge-list](https://github.com/sometgirldotonline/haven-ge-list/))
 <details><summary>How to know if your game engine is supported</summary>
 
 <ul>
