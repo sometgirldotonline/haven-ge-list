@@ -13,7 +13,7 @@ If your game engine is not on this list, that does not directly mean it is not s
 
 </ul></details>
 
-<mark>To search this list: Press CTRL/CMD + F or find the "Search On Page" option in your browsers menu; or use the search bar below</mark> <br>
+<b><u>Search box</u></b><br>
 <input type=search id=search placeholder="Type here to search"> <button onclick="searchAndHighlight(document.querySelector('#search').value)">Search</button>
 <table>
   <thead>
