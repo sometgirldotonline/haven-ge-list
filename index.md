@@ -437,3 +437,11 @@ window.searchAndHighlight = function(query) {
     }, 1500);
 }
 </script>
+<style>@keyframes flash-animation {
+    0% { background-color: #ffe066; }
+    100% { background-color: transparent; }
+}
+
+tr.flash {
+    animation: flash-animation 1.5s ease-out;
+}</style>
