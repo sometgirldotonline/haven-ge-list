@@ -3,6 +3,16 @@ This is a list of game engines, and whether or not they are "compatible" with ha
 
 To put it short, typically the main reason for a game engine not being supported is either due to it lacking support to export to a browser, or the fact that it does not store as files on a computer and lacks built-in support for Git Version Control.
 
+If your game engine is not on this list, that does not directly mean it is not supported.
+<details><summary>How to know if your game engine is supported</summary>
+
+<ul>
+  <li><b>Saves on your computer:</b> It saves files directly to your computer's hard drive.</li>
+  <li><b>Uses separate files:</b> Your images, audio, and code are saved in separate files, rather than bundled into a single file (like Scratch).</li>
+  <li><b>Plays in a browser:</b> It lets you export your game to run on a website (look for options like "Web", "HTML5", "WebGL", or "WASM").</li>
+
+</ul></details>
+
 <mark>To search this list: Press CTRL/CMD + F or find the "Search On Page" option in your browsers menu</mark>
 
 <table>
