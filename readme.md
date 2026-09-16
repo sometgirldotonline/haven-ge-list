@@ -4,20 +4,19 @@ This is a list of game engines, and whether or not they are "compatible" with Ha
 
 To put it short, typically the main reason for a game engine not being supported is either due to it lacking support to export to a browser, or the fact that it does not store projects as usable files on a computer and lacks suitable support for Git Version Control.
 
-Git compatibility does not necessarily require assets to be stored in separate files. Tools such as PICO-8 are still considered Git-compatible because their project files are stored in a text-based format that Git can meaningfully track. The important distinction is whether the project can reasonably be stored and versioned in a Git repository.
-
 If your game engine is not on this list, that does not directly mean it is not supported. (If the site is missing any game engine, please submit an Issue or Pull Request to the site's repository on GitHub: https://github.com/sometgirldotonline/haven-ge-list/)
 
 <details><summary>How to know if your game engine is supported</summary>
-
 <ul>
   <li><b>Saves on your computer:</b> It saves the project files directly to your computer's hard drive.</li>
   <li><b>Uses a Git-compatible project format:</b> Your project can be reasonably stored and versioned using Git. Projects do not necessarily need separate files for every asset; text-based single-file projects can still be compatible.</li>
   <li><b>Plays in a browser:</b> It lets you export your game to run on a website (look for options like "Web", "HTML5", "WebGL", or "WASM").</li>
 </ul>
-
 </details>
-
+<details><summary><h3>A note on Block based game engines (IE: Scratch, MakeCode Blocks, etc)</h3></summary>
+  Any game engines that use blocks for code are explicitly banned by Haven. This is not negotiable.
+  If the game engine can be written in text-based code, the text mode may be used. For example you are permitted to use Gamemaker's GML Script but not GML Visual mode.
+</details>
 <table>
 <thead>
 <tr>
@@ -67,15 +66,6 @@ Project files can be tracked using Git and Unreal provides source-control suppor
 <td>
 <strong>Yes</strong><br>
 Uses a Git-compatible project structure and supports source control workflows.
-</td>
-</tr>
-
-<tr supports-web="true" supports-git="true">
-<td><strong>Construct 3</strong></td>
-<td>Web Export Supported</td>
-<td>
-<strong>Yes</strong><br>
-Projects can be saved as folders containing files that can be tracked with Git.
 </td>
 </tr>
 
@@ -175,15 +165,6 @@ Twine projects can be stored in text-based formats such as Twee, allowing them t
 <td>
 <strong>Yes</strong><br>
 Bitsy game data can be stored as text and tracked using Git, even though the game is authored within the Bitsy editor.
-</td>
-</tr>
-
-<tr supports-web="true" supports-git="true">
-<td><strong>GB Studio</strong></td>
-<td>Web Export Supported</td>
-<td>
-<strong>Yes</strong><br>
-Uses a local project structure with project data and assets stored in files that can be tracked using Git.
 </td>
 </tr>
 
@@ -358,21 +339,6 @@ Uses a proprietary project format that is not practical for the Git workflow req
 </td>
 </tr>
 
-<tr supports-web="true" supports-git="false">
-<td><strong>Scratch / TurboWarp</strong></td>
-<td>
-Web Export Supported
-<details>
-<summary>Note 📝</summary>
-Scratch projects can be converted to browser-playable games using tools such as TurboWarp.
-</details>
-</td>
-<td>
-<strong>No</strong><br>
-Projects are stored as <code>.sb3</code> packages containing the project and its assets together rather than as a Git-friendly project structure. Git can store the package, but it cannot meaningfully track individual project components or changes inside it.
-</td>
-</tr>
-
 <tr supports-web="true" supports-git="true">
 <td><strong>Excalibur.js</strong></td>
 <td>Web Export Supported</td>
@@ -390,24 +356,5 @@ Uses standard JavaScript/TypeScript source files and web assets that can be trac
 Project data can be represented as text and stored in Git, even though the game is authored within the editor.
 </td>
 </tr>
-
-<tr supports-web="true" supports-git="true">
-<td><strong>Flicksy</strong></td>
-<td>Web Export Supported</td>
-<td>
-<strong>Yes</strong><br>
-Project data is stored in a text-based format that can be tracked using Git.
-</td>
-</tr>
-
-<tr supports-web="true" supports-git="true">
-<td><strong>Flickgame</strong></td>
-<td>Web Export Supported</td>
-<td>
-<strong>Yes</strong><br>
-Project data can be stored and versioned using Git.
-</td>
-</tr>
-
 </tbody>
 </table>
